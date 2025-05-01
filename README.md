@@ -20,63 +20,63 @@ https://www.kaggle.com/datasets/lucamu79/bitcoin-price-prediction-using-a-sarima
 - Forecast future prices and plot with confidence intervals
 
 ## 📂 Project Structure
-'''
+```
 ├── scripts
   ├──Bitcoin_Prices.ipynb    # Main Jupyter notebook
+├── graphs
 ├── README.md               # This file
 ├── data
   ├── BTC-USD prices 2017-2023 CLOSE #dataset
-'''
+```
 ## 🧰 Technologies Used
-Python 3.x
+* Python 3.x
 
-Jupyter Notebook
+* Jupyter Notebook
 
-pandas, numpy, matplotlib, seaborn — for data handling and plotting
+* pandas, numpy, matplotlib, seaborn — for data handling and plotting
 
-statsmodels — for SARIMA modeling
+* statsmodels — for SARIMA modeling
 
-pmdarima — for optional automated model selection
+* pmdarima — for optional automated model selection
 
-itertools, warnings — for grid search and clean output
+* itertools, warnings — for grid search and clean output
 
 ## 🧪 Methodology
-1. Data Loading & Exploration
+**1. Data Loading & Exploration**
 Read in historical Bitcoin daily close prices.
 
 Resample and clean the data to obtain monthly prices, using only the first day of each month to reflect a structured time index.
 
-2. Visualization
+**2. Visualization**
 Decompose the time series using STL and classical decomposition.
 
 Plot seasonal, trend, and residual components.
 
 Observe annual patterns and long-term trends.
 
-3. Stationarity Check
+**3. Stationarity Check**
 Apply the Augmented Dickey-Fuller (ADF) test to check for stationarity.
 
 Use log transformation and differencing as needed to stabilize variance and remove trends.
 
-4. ACF and PACF
+**4. ACF and PACF**
 Plot autocorrelation (ACF) and partial autocorrelation (PACF) to guide model order selection.
 
-Visual diagnostics indicate the need for AR(1) and MA(1) terms, along with potential seasonality.
+Visual diagnostics indicate the need for AR(1) and MA(1) terms and potential seasonality.
 
-5. SARIMA Modeling
+**5. SARIMA Modeling**
 Use manual grid search over possible (p, d, q) and (P, D, Q, s) parameters.
 
 Target annual seasonality (s=12) assuming monthly data.
 
 Fit multiple models and compare AIC and BIC values to find the optimal configuration.
 
-6. Best Model Example Output
-text
-Copy
-Edit
+**6. Best Model Example Output**
+```
 Best SARIMA: Order=(1, 0, 0), Seasonal=(0, 0, 0, 12)
 AIC: -9334.96
 BIC: -9323.27
+```
 Log Likelihood: 4669.48
 7. Forecasting
 Forecast 12 future months of Bitcoin prices.
@@ -96,7 +96,7 @@ Conclusion: Simpler models with proper transformation can outperform overly comp
 
 ## 📉 Sample Forecast Plot
 
-
+![Bitcoin-Prices-USD-2017-2023](graphs/forecast.png)
 
 
 📝 License
