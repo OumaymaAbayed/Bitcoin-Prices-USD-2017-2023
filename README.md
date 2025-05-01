@@ -99,5 +99,5 @@ Conclusion: Simpler models with proper transformation can outperform overly comp
 ![Bitcoin-Prices-USD-2017-2023](graphs/forecast.png)
 
 
-📝 License
+## 📝 License
 This project is licensed under the MIT License.
